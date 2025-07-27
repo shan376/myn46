@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myn46-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myn46
+  template:
+    metadata:
+      labels:
+        app: myn46
+    spec:
+      containers:
+      - name: myn46
+        image: nginx
+        ports:
+        - containerPort: 80
